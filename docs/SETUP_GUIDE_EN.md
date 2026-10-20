@@ -59,6 +59,10 @@ The **ESP32 controls only the PCA9685** over I²C. The **PCA9685 generates servo
 
 Servo headers on the common PCA9685 breakout are marked **GND / V+ / PWM**; follow the markings, not the physical colour alone. Double-check polarity before applying power.
 
+![ESP32 and PCA9685 wiring diagram](../assets/wiring-diagram.png)
+
+The purple OE–GPIO18 connection shown in the diagram is not used by the bundled firmware: neither sketch configures GPIO18. For these sketches, use a PCA9685 breakout with [OE held low by its built-in pull-down](https://learn.adafruit.com/16-channel-pwm-servo-driver/pinouts), leaving the purple wire unconnected.
+
 ## 4. Segment-to-channel mapping
 
 Segment convention:

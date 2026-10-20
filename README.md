@@ -64,6 +64,10 @@ The original 14-servo electronics assembly uses a **5 V / 10 A servo supply**. V
 
 **Never power 7 or 14 servos through the ESP32.** Connect every servo to a PCA9685 channel with brown/black to GND, red to V+, and yellow/orange to PWM, verifying the markings on the actual hardware. Keep power-supply and ESP32 grounds common.
 
+![ESP32 and PCA9685 wiring diagram](assets/wiring-diagram.png)
+
+The purple OE–GPIO18 connection shown in the diagram is not used by the bundled firmware: neither sketch configures GPIO18. For these sketches, use a PCA9685 breakout with [OE held low by its built-in pull-down](https://learn.adafruit.com/16-channel-pwm-servo-driver/pinouts), leaving the purple wire unconnected.
+
 ### Servo-to-segment mapping
 
 ```text
@@ -112,6 +116,7 @@ firmware/
 docs/
   SETUP_GUIDE_EN.md
 assets/
+  wiring-diagram.png
   original-14-servo-channel-map.jpg
 README.md
 ```
