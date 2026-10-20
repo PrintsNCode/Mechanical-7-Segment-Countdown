@@ -1,0 +1,13 @@
+# Arduino build / IDE generated
+build/
+*.elf
+*.bin
+*.map
+*.hex
+*.log
+# Operating systems
+.DS_Store
+Thumbs.db
+# Editors
+.vscode/
+.idea/
